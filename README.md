@@ -2,7 +2,7 @@
 
 ## Install
 
-Installing operating system images
+Installing operating system images  
 https://www.raspberrypi.org/documentation/installation/installing-images/README.md
 
 Mount the boot partition of the SD card
