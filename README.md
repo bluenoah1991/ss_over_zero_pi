@@ -24,7 +24,7 @@ Use a text editor to open up the `config.txt` file that is in the boot directory
 
 Then open up `cmdline.txt` After rootwait (the last word on the first line) add a space and then `modules-load=dwc2,g_ether`
 
-    dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=PARTUUID=2652ec4a-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait modules-load=dwc2,g_ether
+    dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=PARTUUID=ee25660b-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait modules-load=dwc2,g_ether quiet init=/usr/lib/raspi-config/init_resize.sh
 
 Plug in a MicroUSB cable from your Pi Zero's USB port to your computer. then SSH in to `raspberrypi.local` and execute the bash command
 
