@@ -29,7 +29,7 @@ Then open up `cmdline.txt` After rootwait (the last word on the first line) add 
 Plug in a MicroUSB cable from your Pi Zero's USB port to your computer. then SSH in to `raspberrypi.local` and execute the bash command
 
     sudo cp /etc/wpa_supplicant/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf.origin
-    sudo sh -c "wpa_passphrase YOUR_WIFI_SSID > /etc/wpa_supplicant/wpa_supplicant.conf"
+    sudo sh -c "wpa_passphrase YOUR_WIFI_SSID >> /etc/wpa_supplicant/wpa_supplicant.conf"
     sudo sed -i "1icountry=CN" /etc/wpa_supplicant/wpa_supplicant.conf
 
 Reboot the ZERO PI. And then clone this repo
