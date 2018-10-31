@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Raspberry Pi Web Admin</title>
+</head>
+<body>
+<p>Your Router address is <b>{{ ip_address }}</b></p>
+<h4>How to configure your iPhone?</h4>
+<p>
+1. Tap on the settings icon in your iPhone/iPad's screen.<br />
+2. Go to the Wi-Fi section.<br />
+3. Tap on the blue "i" next to the name of the Wi-Fi network.<br />
+4. Go to the Static tab<br />
+5. Tap on the IP Address field and enter the static IP address that you want to use on your iPhone/iPad.<br />
+6. Tap on the Router field and enter the IP address above.<br />
+7. Tap on Subnet Mask field and enter your information(usually 255.255.255.0).<br />
+8. Tap on the DNS field and enter the routers IP address(or 114.114.114.114).<br />
+9. Tap on the Wi-Fi button in the upper left corner of the screen to save settings.
+</p>
+<h4>Configure Wi-Fi</h4>
+<form action="/" method="POST">
+	<p>
+		<i>WIFI SSID: </i>
+		<input type="text" name="ssid" value="WIFI SSID" />
+		<br />
+		<i>WIFI PASSWORD: </i>
+		<input type="password" name="pwd" value="WIFI PASSWORD" />
+	</p>
+	<input type="submit" value="OK" />
+</form>
+</body>
+</html>
