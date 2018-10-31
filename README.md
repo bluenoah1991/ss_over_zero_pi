@@ -28,10 +28,19 @@ Then open up `cmdline.txt` After rootwait (the last word on the first line) add 
 
 Plug in a MicroUSB cable from your Pi Zero's USB port to your computer. then SSH in to `raspberrypi.local` and execute the bash command
 
+    sudo cp /etc/wpa_supplicant/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf.origin
+    sudo sh -c "wpa_passphrase YOUR_WIFI_SSID > /etc/wpa_supplicant/wpa_supplicant.conf"
+    sudo sed -i "1icountry=CN" /etc/wpa_supplicant/wpa_supplicant.conf
+
+Reboot the ZERO PI. And then clone this repo
+
     sudo apt-get update
     sudo apt-get install git
     
     git clone https://github.com/codemeow5/ss_over_zero_pi.git
+    
+    sudo apt-get install python-pip
+    sudo pip install Flask
 
 Paste `FLASK_DEBUG=1 /usr/bin/nohup /usr/bin/python /home/pi/ss_over_zero_pi/webadmin.py > /home/pi/webadmin.log 2>&1 &` to `/etc/rc.local`.  
 Then execute the command
