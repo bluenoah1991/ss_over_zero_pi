@@ -40,7 +40,6 @@ echo -e "
     \"fast_open\": false
 }
 " > ${CONFIG_PATH}
-fi
 else
 cp ${LOCAL_CONFIG_PATH} ${CONFIG_PATH}
 fi
