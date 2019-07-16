@@ -2,7 +2,7 @@
 
 # IP address instead of domain
 REMOTE_SERVER_IP=123.123.123.123
-REMOTE_SERVER_PASSWORD=123456
+LOCAL_CONFIG_PATH=/home/pi/shadowsocks.json
 CONFIG_PATH=/etc/shadowsocks-libev/config.json
 LAN_INTERFACE_NAME=wlan0
 
@@ -27,6 +27,7 @@ sysctl -p /etc/sysctl.conf
 # Disable ss-server service
 systemctl disable shadowsocks-libev.service
 
+if [ ! -e ${LOCAL_CONFIG_PATH} ]; then
 echo -e "
 {
     \"server\": \"${REMOTE_SERVER_IP}\",
@@ -39,6 +40,10 @@ echo -e "
     \"fast_open\": false
 }
 " > ${CONFIG_PATH}
+fi
+else
+cp ${LOCAL_CONFIG_PATH} ${CONFIG_PATH}
+fi
 
 # Enable ss-redir service
 if [ ! -e /var/run/ss-redir.pid ]; then
