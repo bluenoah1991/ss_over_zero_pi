@@ -2,6 +2,7 @@
 
 # IP address instead of domain
 REMOTE_SERVER_IP=123.123.123.123
+REMOTE_SERVER_PASSWORD=123456
 LOCAL_CONFIG_PATH=/home/pi/shadowsocks.json
 CONFIG_PATH=/etc/shadowsocks-libev/config.json
 LAN_INTERFACE_NAME=wlan0
